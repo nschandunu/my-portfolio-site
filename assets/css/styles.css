@@ -361,7 +361,7 @@ img {
 }
 
 /* ===== CONTACT =====*/
-.__input {
+.contact__input {
   width: 100%;
   font-size: var(--normal-font-size);
   font-weight: var(--font-semi);
@@ -508,6 +508,13 @@ img {
   .work__container {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 2rem;
+  }
+  .contact__form {
+    width: 360px;
+    padding-top: 2rem;
+  }
+  .contact__container {
+    justify-items: center;
   }
 }
 @media screen and (min-width: 992px) {
