@@ -57,3 +57,6 @@ sr.reveal('.home__social-icon',{ interval: 200});
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
 
 sr.reveal('.edu', { delay: 300 });
+
+/* -- PROJECT BOX -- */
+sr.reveal('.project-box',{interval: 200})
