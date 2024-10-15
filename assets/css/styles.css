@@ -155,10 +155,16 @@ nav{
 }
 .nav-menu, .nav_menu_list{
   display: flex;
+  flex-direction: row;
 }
 .nav-menu .nav_list{
   list-style: none;
   position: relative;
+}
+
+.nav_menu_list {
+  display: flex;
+  gap: 20px; /* Adjust space between items */
 }
 
 .nav-link{
@@ -192,7 +198,45 @@ nav{
   border-radius: 50%;
 }
 
+/* Responsive styles */
+@media (max-width: 768px) {
+  .nav-menu {
+      display: none; /* Hide menu on mobile by default */
+      position: absolute;
+      top: 90px; /* Position below the header */
+      left: 0;
+      right: 0;
+      background: var(--body-color);
+      flex-direction: column;
+      align-items: center; /* Center items */
+      z-index: 10;
+  }
 
+  .nav-menu.show {
+      display: flex; /* Show menu when toggled */
+  }
+
+  .nav-menu-btn {
+      display: flex; /* Show menu button */
+      cursor: pointer;
+      font-size: 28px;
+  }
+
+  .overlay {
+      display: none; /* Hide overlay by default */
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+      z-index: 5;
+  }
+
+  .overlay.show {
+      display: block; /* Show overlay when menu is open */
+  }
+}
 /*===== OLD NAVIGATION BAR =====
 
 .l-header {
@@ -499,12 +543,6 @@ nav{
 }
 
 
-@media screen and (max-width: 768px) {
-  .project2-box {
-      width: 100%;
-  }
-}
-
 /* ===== Blog =====*/
 .work__container {
   row-gap: 2rem;
@@ -584,22 +622,54 @@ nav{
   .home__social {
     padding-top: 0;
     padding-bottom: 2.5rem;
-    flex-direction: row;
+    flex-direction: column;
     align-self: flex-end;
+    gap: 1rem;
   }
   .home__social-icon {
     margin-bottom: 0;
     margin-right: var(--mb-4);
   }
   .home__img {
-    width: 800px;
-    bottom: 25%;
+    width: 300px;
+    bottom: 6%;
   }
-  .about__container {
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    text-align: initial;
+
+  .edu {
+    display: inline-block;
+    margin: 0 10px 10px;
+    white-space: normal;
+    height: auto; /* Let the height adjust based on content */
+    padding: 0px; /* Add some padding for better spacing */
   }
+
+  .edu-content {
+    padding: 10px;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .edu-content strong {
+    font-size: 0.9em; /* Adjust font size for strong text on mobile if necessary */
+  }
+
+  .edu-content .small-text {
+    font-size: 0.6em; /* Adjust font size for small text on mobile */
+  }
+
+  .project2-container {
+      flex-direction: column; /* Stack boxes vertically on very small screens */
+      align-items: center;    /* Center boxes vertically */
+      padding: 0 10px; /* Reduce padding for mobile to fit better */
+  }
+
+  .project2-box {
+      width: 90%;             /* Increase width to 90% on mobile */
+      margin-bottom: 20px;    /* Add margin between boxes when stacked */
+  }
+
+
+  /*
   .skills__container {
     grid-template-columns: 0.7fr;
     justify-content: center;
@@ -616,8 +686,11 @@ nav{
   }
   .contact__container {
     justify-items: center;
-  }
+  } */
 }
+
+
+
 
 
 @media screen and (min-width: 576px) {
@@ -653,6 +726,7 @@ nav{
     column-gap: 2rem;
     padding-top: 2rem;
   }
+  
   .contact__form {
     width: 360px;
     padding-top: 2rem;

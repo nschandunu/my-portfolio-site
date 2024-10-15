@@ -51,6 +51,8 @@
                 </div>
               </nav>
 
+              <div class="overlay" id="overlay" onclick="myMenuFunction()"></div>
+
 
 
 
@@ -304,5 +306,14 @@
 
         <!--===== MAIN JS =====-->
         <script src="assets/js/main.js"></script>
+
+        <script>
+            function myMenuFunction() {
+                const navMenu = document.getElementById('myNavMenu');
+                const overlay = document.getElementById('overlay');
+                navMenu.classList.toggle('show');
+                overlay.classList.toggle('show');
+            }
+        </script>
     </body>
 </html>
