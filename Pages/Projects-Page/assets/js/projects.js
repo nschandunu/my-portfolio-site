@@ -75,3 +75,21 @@ sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200});
 sr.reveal('.edu', { delay: 300 });
 sr.reveal('.project2-box', { interval: 200 });
 
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Initialize ScrollReveal
+  const sr = ScrollReveal({
+      distance: '20px', // Distance to move the items
+      duration: 800,     // Animation duration in milliseconds
+      delay: 200,        // Delay between animations
+      easing: 'ease-in-out', // Easing function
+      origin: 'bottom'   // Starting point for the animation
+  });
+
+  // Reveal the entire timeline on scroll
+  const timeline = document.querySelector('.timeline');
+  sr.reveal(timeline, {
+      interval: 100 // Delay between each item
+  });
+});
