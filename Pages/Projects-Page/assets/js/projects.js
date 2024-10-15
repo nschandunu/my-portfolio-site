@@ -76,7 +76,7 @@ sr.reveal('.edu', { delay: 300 });
 sr.reveal('.project2-box', { interval: 200 });
 
 
-// Wait for the DOM to fully load
+
 document.addEventListener("DOMContentLoaded", function() {
   // Initialize ScrollReveal
   const sr = ScrollReveal({
